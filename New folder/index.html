@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>لوحة تحكم وكلاء السحابة</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.js"></script>
+    <style>
+      body {
+        font-family: 'Tajawal', sans-serif;
+      }
+      .interactive-text-glow {
+        transition: text-shadow 0.3s ease-in-out, color 0.3s ease-in-out;
+      }
+      .interactive-text-glow:hover {
+        color: #f0f9ff; /* A lighter shade of white */
+        text-shadow: 0 0 5px rgba(56, 189, 248, 0.5), 
+                     0 0 15px rgba(56, 189, 248, 0.4), 
+                     0 0 30px rgba(56, 189, 248, 0.3);
+      }
+      .leaflet-popup-content-wrapper, .leaflet-popup-tip {
+        background-color: #1f2937; /* bg-gray-800 */
+        color: #d1d5db; /* text-gray-300 */
+        box-shadow: 0 3px 14px rgba(0,0,0,0.4);
+      }
+       .leaflet-popup-content b {
+        color: #fff;
+      }
+      .leaflet-container a.leaflet-popup-close-button {
+        color: #9ca3af; /* text-gray-400 */
+      }
+    </style>
+  <script type="importmap">
+{
+  "imports": {
+    "@google/genai": "https://aistudiocdn.com/@google/genai@^1.24.0",
+    "recharts": "https://aistudiocdn.com/recharts@^3.2.1",
+    "react": "https://aistudiocdn.com/react@^19.2.0",
+    "react/": "https://aistudiocdn.com/react@^19.2.0/",
+    "react-dom/": "https://aistudiocdn.com/react-dom@^19.2.0/"
+  }
+}
+</script>
+<link rel="stylesheet" href="/index.css">
+</head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/index.tsx"></script>
+  </body>
+</html>
