@@ -15,6 +15,7 @@
     <style>
       body {
         font-family: 'Tajawal', sans-serif;
+        background-color: #111827; /* bg-gray-900 */
       }
       .interactive-text-glow {
         transition: text-shadow 0.3s ease-in-out, color 0.3s ease-in-out;
@@ -36,6 +37,13 @@
       .leaflet-container a.leaflet-popup-close-button {
         color: #9ca3af; /* text-gray-400 */
       }
+      .feature-card {
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+      }
+      .feature-card:hover {
+        transform: translateY(-8px);
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+      }
     </style>
   <script type="importmap">
 {
@@ -50,9 +58,95 @@
 </script>
 <link rel="stylesheet" href="/index.css">
 </head>
-  <body>
-    <div id="root"></div>
+<body>
+    <div id="landing-page">
+        <header class="absolute top-0 left-0 right-0 p-6 z-10">
+            <div class="container mx-auto flex justify-between items-center">
+                <h1 class="text-2xl font-bold text-white interactive-text-glow">شركة السحابة</h1>
+                <a href="#" id="launch-app-btn-header" class="bg-cyan-600 text-white font-semibold py-2 px-5 rounded-lg hover:bg-cyan-700 transition-colors">
+                    دخول
+                </a>
+            </div>
+        </header>
+
+        <main>
+            <section class="min-h-screen flex items-center justify-center bg-gray-900 text-white text-center p-6 relative overflow-hidden">
+                <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-cyan-500 rounded-full blur-3xl opacity-10 pointer-events-none"></div>
+                <div class="z-10">
+                    <h2 class="text-4xl md:text-6xl font-bold mb-4 leading-tight">حلل بيانات وكلائك بذكاء</h2>
+                    <p class="text-lg md:text-xl text-gray-300 max-w-3xl mx-auto mb-8">
+                        حوّل ملفات Excel إلى لوحة تحكم تفاعلية. احصل على رؤى فورية، وتصورات بيانية، وتحليلات مدعومة بالذكاء الاصطناعي لاتخاذ قرارات أفضل.
+                    </p>
+                    <a href="#" id="launch-app-btn-hero" class="bg-cyan-600 text-white font-bold py-3 px-8 rounded-lg text-lg hover:bg-cyan-700 transition-colors transform hover:scale-105 inline-block">
+                        ابدأ التحليل الآن
+                    </a>
+                </div>
+            </section>
+
+            <section id="features" class="py-20 bg-gray-800">
+                <div class="container mx-auto px-6 text-center">
+                    <h3 class="text-3xl font-bold text-white mb-2">لماذا تختار لوحة تحكم السحابة؟</h3>
+                    <p class="text-gray-400 mb-12">أدوات قوية مصممة لتبسيط تحليلاتك.</p>
+                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                        <div class="bg-gray-900 p-8 rounded-xl feature-card">
+                            <div class="bg-cyan-500/10 text-cyan-400 rounded-full p-3 inline-flex mb-4"><svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z" /></svg></div>
+                            <h4 class="text-xl font-bold text-white mb-2">تحليل فوري</h4>
+                            <p class="text-gray-400">ارفع ملف Excel واحصل على تحليل شامل لإحصائيات المشتركين والوكلاء في ثوانٍ.</p>
+                        </div>
+                        <div class="bg-gray-900 p-8 rounded-xl feature-card">
+                           <div class="bg-cyan-500/10 text-cyan-400 rounded-full p-3 inline-flex mb-4"><svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" /></svg></div>
+                            <h4 class="text-xl font-bold text-white mb-2">رؤى الذكاء الاصطناعي</h4>
+                            <p class="text-gray-400">استفد من Gemini للحصول على ملخصات وتوصيات قابلة للتنفيذ لتحسين عملك.</p>
+                        </div>
+                        <div class="bg-gray-900 p-8 rounded-xl feature-card">
+                            <div class="bg-cyan-500/10 text-cyan-400 rounded-full p-3 inline-flex mb-4"><svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 20l-5.447-2.724A1 1 0 013 16.382V5.618a1 1 0 011.447-.894L9 7m0 13l6-3m-6 3V7m6 10l4.553 2.276A1 1 0 0021 18.382V7.618a1 1 0 00-1.447-.894L15 9m-6-2l6-3m0 0l6 3m-6-3v10" /></svg></div>
+                            <h4 class="text-xl font-bold text-white mb-2">خريطة تفاعلية</h4>
+                            <p class="text-gray-400">شاهد توزيع وكلائك على خريطة تفاعلية لفهم انتشارك الجغرافي بشكل أفضل.</p>
+                        </div>
+                        <div class="bg-gray-900 p-8 rounded-xl feature-card">
+                            <div class="bg-cyan-500/10 text-cyan-400 rounded-full p-3 inline-flex mb-4"><svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 17v-2m3 2v-4m3 4v-6m2 10H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" /></svg></div>
+                            <h4 class="text-xl font-bold text-white mb-2">تقارير مخصصة</h4>
+                            <p class="text-gray-400">تتبع أداء كل وكيل على حدة، وقم بتصدير البيانات الهامة بسهولة لاتخاذ إجراءات.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <footer class="bg-gray-900 text-center py-6">
+            <p class="text-gray-500 text-sm">جميع الحقوق محفوظة © احمد رعد الصالحي 2026</p>
+        </footer>
+    </div>
+    
+    <div id="app-container" class="hidden">
+        <div id="root"></div>
+    </div>
+    
     <script type="module" src="/src/index.tsx"></script>
-  <script type="module" src="/index.tsx"></script>
+
+    <script>
+        function launchApp() {
+            document.getElementById('landing-page').style.display = 'none';
+            // Use 'block' for a simple show, but 'flex' might be needed if the root of your app is a flex container
+            const appContainer = document.getElementById('app-container');
+            appContainer.style.display = 'block'; // Or 'flex' if needed
+            appContainer.style.height = '100vh'; // Ensure it takes full height
+        }
+
+        const launchButtons = [
+            document.getElementById('launch-app-btn-header'),
+            document.getElementById('launch-app-btn-hero')
+        ];
+
+        launchButtons.forEach(button => {
+            if (button) {
+                button.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    launchApp();
+                });
+            }
+        });
+    </script>
+<script type="module" src="/index.tsx"></script>
 </body>
 </html>
